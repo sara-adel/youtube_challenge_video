@@ -38,6 +38,6 @@ views - Description - Thumbnail)
 ```
 go to localhost folder 
 git clone this repo 
-
+localhost/youtube_challenge_video
 
 ```
