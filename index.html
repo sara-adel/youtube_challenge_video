@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--CSS Import-->
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<div></div>
+
+<body ng-app="youtubeVideosList">
+
+<div class="loading" ng-show="prograssing">Loading <span class="d">.</span><span class="d d-2">.</span><span
+        class="d d-3">.</span></div>
+
+<div class="data" ng-show="!prograssing">
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-6">
+                <a href="#!/"><img class="logo img-rounded" src="assets/logo_Dark-1.png"></a>
+
+            </div>
+            <div class="col-sm-6">
+                <div id="searchBox" class="hideDev pull-right">
+                    <input type="text" class="col-sm-3 searchBtn" ng-model="search_item"
+                           placeholder="&#x1F50E; Search by video title ">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="col-sm-12 " ng-view></div>
+</div>
+
+
+</body>
+<!--JS Import-->
+<script src="js/assets/jquery.min.js"></script>
+<script src="js/assets/angular.min.js"></script>
+<script src="js/assets/bootstrap.min.js"></script>
+<script src="js/assets/angular-route.js"></script>
+<script src="js/mainScript.js"></script>
+<script src="js/filters/durationFilter.js"></script>
+<script src="js/conrtoller/mainController.js"></script>
+<script src="js/conrtoller/detailsController.js"></script>
+<script src="js/service/youtubeService.js"></script>
+<script src="js/service/localStorageService.js"></script>
+<script src="js/directive/starRatingDirective.js"></script>
+
+</html>

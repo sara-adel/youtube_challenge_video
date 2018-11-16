@@ -1,0 +1,45 @@
+<div class="col-sm-12">
+    <!--<div class="pull-right">-->
+    <!--<input type="text" class="col-sm-3 searchBtn" ng-model="search_item"-->
+    <!--placeholder="Search by video title ">-->
+    <!--</div>-->
+    <br/>
+    <br/>
+    <br/>
+    <div class="col-sm-12">
+        <table class="col-sm-12 table table-hover">
+            <thead>
+            <tr>
+                <th></th>
+                <th ng-click="order('snippet.title')"><i class='fa fa-sort'></i> Title</th>
+                <th ng-click="order('snippet.publishedAt')"><i class='fa fa-sort'></i> Publish Date
+                </th>
+                <th></th>
+            </tr>
+            </thead>
+
+            <tbody ng-repeat="video in videos | filter:search_item | orderBy:orderProperty">
+            <tr>
+                <td><img class="image_all img-rounded" src="{{video.snippet.thumbnails.default.url}}"></td>
+                <td class="center_td">{{video.snippet.title}}</td>
+                <td class="center_td">{{video.snippet.publishedAt | date:'dd-MM-yyyy'}}</td>
+                <td class="center_td"><a class="btn btn-default detailsBtn" ng-mouseenter="hovering=true"
+                                         ng-mouseleave="hovering=false"
+                                         href="#!details/{{video.id.videoId}}">Details</a>
+                </td>
+
+            </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+<div class="pagination pull-right">
+    <button ng-click="paginate(prePageToken)" class="btn paginateBtn {{prePageToken?'active':'disabled'}}"><i
+            class="fa fa-caret-left"></i></button>
+    <button ng-click="paginate(nextPageToken)" class="btn {{nextPageToken?'active':'disabled'}} paginateBtn"><i
+            class="fa fa-caret-right"></i></button>
+</div>
+
+
